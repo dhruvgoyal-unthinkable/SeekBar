@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.nextBtn.setOnClickListener(view -> {
-            progress = binding.seekBar.getProgress(); binding.seekBar.setProgress(progress + 1);
+            progress = binding.seekBar.getProgress();
+            binding.seekBar.setProgress(progress + 1);
         });
     }
 }
