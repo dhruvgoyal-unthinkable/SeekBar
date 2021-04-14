@@ -13,4 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="StepsSeekBar" parent="Base.Widget.AppCompat.SeekBar">
+        <item name="tickMark">@drawable/ic_default_thumb</item>
+        <item name="android:focusable">true</item>
+    </style>
 </resources>
