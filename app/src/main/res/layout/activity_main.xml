@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,17 +10,25 @@
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:max="3"
         android:progressBackgroundTint="@color/azure"
-        android:thumb="@drawable/ic_selected_thumb"
-        android:theme="@style/StepsSeekBar" />
+        android:theme="@style/StepsSeekBar"
+        android:thumb="@drawable/ic_selected_thumb" />
+
     <Button
         android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="@string/next"/>
+        android:layout_marginTop="20dp"
+        android:text="@string/next" />
+
+    <com.example.seekbar.CustomSeekBar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:max="3"
+        android:progressBackgroundTint="@color/azure"
+        android:thumb="@drawable/ic_selected_thumb"
+        android:tickMark="@drawable/ic_default_thumb" />
 </LinearLayout>
