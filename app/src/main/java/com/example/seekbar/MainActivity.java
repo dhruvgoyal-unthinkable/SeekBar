@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         binding.nextBtn.setOnClickListener(view ->
         {
             int progress = progressIndicator.getProgress();
-            Log.d("Hello", Integer.toString(progress));
             progressIndicator.setProgress(progress + 1);
         });
     }
