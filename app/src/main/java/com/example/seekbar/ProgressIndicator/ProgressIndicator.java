@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -20,7 +21,8 @@ public class ProgressIndicator extends LinearLayout {
     private final ArrayList<Drawable> icons;
     private int progress;
     private final Context context;
-    private TypedArray attributes;
+    private final TypedArray attributes;
+    private ProgressAdapter adapter;
 
     public ProgressIndicator(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -31,16 +33,20 @@ public class ProgressIndicator extends LinearLayout {
         attributes = context.obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
         loadIcons(attributes);
         updateRecyclerView();
-        attributes.recycle();
     }
 
-    public void setProgress(int value){
+    public void setProgress(int value) {
         progress = value;
         loadIcons(attributes);
+        adapter.notifyDataSetChanged();
+    }
+
+    public int getProgress() {
+        return progress;
     }
 
     private void updateRecyclerView() {
-        ProgressAdapter adapter = new ProgressAdapter(icons);
+        adapter = new ProgressAdapter(icons);
         adapter.notifyDataSetChanged();
         RecyclerView progressBar = findViewById(R.id.progress_bar);
         progressBar.setHasFixedSize(true);
@@ -49,12 +55,16 @@ public class ProgressIndicator extends LinearLayout {
     }
 
     private void loadIcons(TypedArray attributes) {
+        int max = attributes.getInt(R.styleable.ProgressIndicator_max, 3);
+        if (progress >= max)
+            return;
+        icons.clear();
         for (int i = 0; i < progress; i++) {
             icons.add(attributes.getDrawable(R.styleable.ProgressIndicator_processedIcon));
-            icons.add(attributes.getDrawable(R.styleable.ProgressIndicator_processedProgressLine));
+            icons.add(attributes.getDrawable(R.styleable.ProgressIndicator_defaultProgressLine));
         }
         icons.add(attributes.getDrawable(R.styleable.ProgressIndicator_progressIcon));
-        for (int i = progress + 1; i < attributes.getInt(R.styleable.ProgressIndicator_max, 3); i++) {
+        for (int i = progress + 1; i < max; i++) {
             icons.add(attributes.getDrawable(R.styleable.ProgressIndicator_defaultProgressLine));
             icons.add(attributes.getDrawable(R.styleable.ProgressIndicator_defaultIcon));
         }

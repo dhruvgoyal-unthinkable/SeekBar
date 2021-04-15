@@ -6,13 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.seekbar.R;
-import com.example.seekbar.databinding.ItemBinding;
+
+import java.util.ArrayList;
 
 public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView> {
 
@@ -49,6 +48,8 @@ public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyView holder, int position) {
         holder.icon.setImageDrawable(icons.get(position));
+        if (position % 2 != 0) {
+        }
     }
 
 
