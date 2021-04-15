@@ -4,7 +4,7 @@
     android:layout_centerHorizontal="true"
     android:orientation="horizontal"
     android:padding="20dp">
-    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/progress_bar"
         android:layout_width="match_parent"

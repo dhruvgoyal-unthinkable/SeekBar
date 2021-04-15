@@ -6,13 +6,9 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/circularProgress"
+        android:id="@+id/icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_gravity="center_vertical"
+        android:layout_height="match_parent" />
 
-    <ImageView
-        android:id="@+id/lineProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical" />
 </LinearLayout>

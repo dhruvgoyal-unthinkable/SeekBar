@@ -18,12 +18,11 @@ public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView
     private final ArrayList<Drawable> icons;
 
     public static class MyView extends RecyclerView.ViewHolder {
-        ImageView circularProgress, lineProgress;
+        ImageView icon;
 
         public MyView(View view) {
             super(view);
-            circularProgress = view.findViewById(R.id.circularProgress);
-            lineProgress = view.findViewById(R.id.lineProgress);
+            icon = view.findViewById(R.id.icon);
         }
     }
 
@@ -48,13 +47,7 @@ public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyView holder, int position) {
-        if (position % 2 != 0) {
-            holder.circularProgress.setVisibility(View.GONE);
-            holder.lineProgress.setImageDrawable(icons.get(position));
-        } else {
-            holder.lineProgress.setVisibility(View.GONE);
-            holder.circularProgress.setImageDrawable(icons.get(position));
-        }
+        holder.icon.setImageDrawable(icons.get(position));
     }
 
 
