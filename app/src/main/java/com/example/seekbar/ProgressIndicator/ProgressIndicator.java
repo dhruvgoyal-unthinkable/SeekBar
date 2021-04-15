@@ -20,6 +20,7 @@ public class ProgressIndicator extends LinearLayout {
     private final ArrayList<Drawable> icons;
     private int progress;
     private final Context context;
+    private TypedArray attributes;
 
     public ProgressIndicator(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -27,14 +28,20 @@ public class ProgressIndicator extends LinearLayout {
         icons = new ArrayList<>();
         progress = 0;
         inflate(context, R.layout.progress_indicator, this);
-        TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
+        attributes = context.obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
         loadIcons(attributes);
         updateRecyclerView();
         attributes.recycle();
     }
 
+    public void setProgress(int value){
+        progress = value;
+        loadIcons(attributes);
+    }
+
     private void updateRecyclerView() {
         ProgressAdapter adapter = new ProgressAdapter(icons);
+        adapter.notifyDataSetChanged();
         RecyclerView progressBar = findViewById(R.id.progress_bar);
         progressBar.setHasFixedSize(true);
         progressBar.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
