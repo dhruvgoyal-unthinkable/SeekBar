@@ -1,4 +1,4 @@
-package com.example.seekbar;
+package com.example.seekbar.ProgressIndicator;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.seekbar.R;
 
 public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView>{
 
@@ -23,8 +25,8 @@ public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView
         public MyView(View view)
         {
             super(view);
-            progress_circular = (ImageView)view.findViewById(R.id.progress_circular);
-            progress_line = (ImageView) view.findViewById(R.id.progress_line);
+            progress_circular = view.findViewById(R.id.progress_circular);
+            progress_line = view.findViewById(R.id.progress_line);
         }
     }
     public ProgressAdapter(ArrayList<Images> imageList)

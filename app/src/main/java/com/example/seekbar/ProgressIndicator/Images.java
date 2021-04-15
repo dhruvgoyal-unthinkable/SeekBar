@@ -1,4 +1,4 @@
-package com.example.seekbar;
+package com.example.seekbar.ProgressIndicator;
 
 public class Images {
     private int progress_circular;

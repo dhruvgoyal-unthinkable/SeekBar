@@ -3,13 +3,14 @@ package com.example.seekbar;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.seekbar.ProgressIndicator.Images;
+import com.example.seekbar.ProgressIndicator.ProgressAdapter;
 import com.example.seekbar.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
