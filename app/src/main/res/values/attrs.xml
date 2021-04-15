@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ProgressIndicator">
-        <attr name="image" format="reference" />
+        <attr name="defaultIcon" format="reference" />
+        <attr name="progressIcon" format="reference" />
+        <attr name="processedIcon" format="reference" />
+        <attr name="defaultProgressLine" format="reference" />
+        <attr name="processedProgressLine" format="reference" />
+        <attr name="max" format="integer" />
     </declare-styleable>
 </resources>

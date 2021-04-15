@@ -1,5 +1,6 @@
 package com.example.seekbar.ProgressIndicator;
 
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,27 +12,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.seekbar.R;
+import com.example.seekbar.databinding.ItemBinding;
 
-public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView>{
+public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView> {
 
-    private ArrayList<Images> imagesList;
+    private final ArrayList<Drawable> icons;
 
-    public class MyView
-            extends RecyclerView.ViewHolder {
+    public static class MyView extends RecyclerView.ViewHolder {
+        ImageView icon;
 
-        ImageView progress_circular, progress_line;
-
-
-        public MyView(View view)
-        {
+        public MyView(View view) {
             super(view);
-            progress_circular = view.findViewById(R.id.progress_circular);
-            progress_line = view.findViewById(R.id.progress_line);
+            icon = view.findViewById(R.id.icon);
         }
     }
-    public ProgressAdapter(ArrayList<Images> imageList)
-    {
-        this.imagesList = imageList;
+
+    public ProgressAdapter(ArrayList<Drawable> icons) {
+        this.icons = icons;
     }
 
     @NonNull
@@ -45,19 +42,23 @@ public class ProgressAdapter extends RecyclerView.Adapter<ProgressAdapter.MyView
                         parent,
                         false);
 
+
         return new MyView(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyView holder, int position) {
-        holder.progress_circular.setImageResource(imagesList.get(position).getProgress_circular());
-        holder.progress_line.setImageResource(imagesList.get(position).getProgress_line());
+        holder.icon.setImageDrawable(icons.get(position));
+    }
 
 
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override
     public int getItemCount() {
-        return imagesList.size();
+        return icons.size();
     }
 }

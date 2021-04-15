@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
+    <com.example.seekbar.ProgressIndicator.ProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:defaultIcon="@drawable/ic_default_thumb"
+        app:defaultProgressLine="@color/azure"
+        app:max="3"
+        app:processedIcon="@drawable/ic_previous_thumb"
+        app:processedProgressLine="@color/azure"
+        app:progressIcon="@drawable/ic_selected_thumb" />
 
     <Button
         android:id="@+id/nextBtn"
@@ -14,15 +24,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Next" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="10dp"/>
 </LinearLayout>
