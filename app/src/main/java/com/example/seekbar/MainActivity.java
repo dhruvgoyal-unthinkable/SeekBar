@@ -10,7 +10,6 @@ import com.example.seekbar.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    int progress;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -18,9 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.nextBtn.setOnClickListener(view -> {
-            progress = binding.seekBar.getProgress();
-            binding.seekBar.setProgress(progress + 1);
-        });
+
     }
 }

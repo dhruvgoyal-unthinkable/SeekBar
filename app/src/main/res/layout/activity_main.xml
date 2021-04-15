@@ -6,82 +6,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
+    <com.example.seekbar.ProgressIndicator
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:max="3"
-        android:progressBackgroundTint="@color/azure"
-        android:theme="@style/StepsSeekBar"
-        android:thumb="@drawable/ic_selected_thumb" />
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:id="@+id/nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/next" />
-
-
-    <com.example.seekbar.CustomSeekBar
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:max="3"
-        android:progressBackgroundTint="@color/azure"
-        android:thumb="@drawable/ic_selected_thumb"
-        android:tickMark="@drawable/ic_default_thumb" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/progress_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_selected_thumb" />
-
-        <ImageView
-            android:id="@+id/line1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_progress_line" />
-
-        <ImageView
-            android:id="@+id/progress_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_default_thumb" />
-
-        <ImageView
-            android:id="@+id/line2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_progress_line" />
-
-        <ImageView
-            android:id="@+id/progress_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_default_thumb" />
-
-        <ImageView
-            android:id="@+id/line3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_progress_line" />
-
-        <ImageView
-            android:id="@+id/progress_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_default_thumb" />
-
-    </LinearLayout>
-
+        android:layout_gravity="center_horizontal"
+        android:text="Next" />
 </LinearLayout>
