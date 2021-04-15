@@ -55,7 +55,7 @@ public class ProgressIndicator extends LinearLayout {
     }
 
     private void loadIcons(TypedArray attributes) {
-        int max = attributes.getInt(R.styleable.ProgressIndicator_max, 3);
+        int max = attributes.getInt(R.styleable.ProgressIndicator_max, 4);
         if (progress >= max)
             return;
         icons.clear();

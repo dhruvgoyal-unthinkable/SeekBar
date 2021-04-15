@@ -14,7 +14,7 @@
         android:layout_gravity="center_horizontal"
         app:defaultIcon="@drawable/ic_default_thumb"
         app:defaultProgressLine="@drawable/ic_progress_line"
-        app:max="3"
+        app:max="4"
         app:processedIcon="@drawable/ic_previous_thumb"
         app:progressIcon="@drawable/ic_selected_thumb" />
 
